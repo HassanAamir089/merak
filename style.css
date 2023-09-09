@@ -1,18 +1,22 @@
 body, html{
 	width: 100%;
 	height: 100%;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 body{
     margin: auto 0;
-	font-family: 'Ubuntu', sans-serif;
+		font-family: 'Ubuntu', sans-serif;
 }
 
 
 /*----------main nav----------*/
 .main-nav{
+	display: -ms-grid;
 	display: grid;
 	gap: 0px;
+	-ms-grid-columns: 2fr 0px 4fr 0px 1fr 0px 1fr;
 	grid-template-columns: 2fr 4fr 1fr 1fr;
     list-style-type: none;
 	font-size: 2em;
@@ -26,12 +30,16 @@ body{
 .icon{
 	width: 35px;
 	height: 35px;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
 	transition: all 0.5s;
 
 }
 
 .icon:hover{
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 .pushr{
@@ -57,32 +65,43 @@ body{
 /*----------Collection----------*/
 .tile{
  	padding: 50px;
- 	flex: 0 0 auto;
+ 	-webkit-box-flex: 0;
+ 	    -ms-flex: 0 0 auto;
+ 	        flex: 0 0 auto;
  	margin: 20px 10px;
  	text-align: center;
 
  --s: 100px; /* control the size */
-/* --c1: #4ECDC4;
- --c2: #556270;*/
 
-  --c1: #4ECDC4;
+ --c1: #4ECDC4;
  --c2: rgba(255, 145, 67, 0.9);
+
+  background: 
+    -o-linear-gradient(116.56deg,var(--c1) 33%,var(--c2) 33.3% 66.6%,var(--c1) 67%) 
+    0/var(--s) var(--s);
 
   background: 
     linear-gradient(-26.56deg,var(--c1) 33%,var(--c2) 33.3% 66.6%,var(--c1) 67%) 
     0/var(--s) var(--s);
   border-radius: 20px;
+  -webkit-transition: all 0.15s;
+  -o-transition: all 0.15s;
   transition: all 0.15s;
 
 }
 
 .tile:hover{
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 .scrolling-wrapper{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   background-color: rgba(75, 171, 175, 1);
@@ -98,8 +117,8 @@ body{
 }
 
 .tile img{
-	height: 170px;
-	width: 100%;
+	height: 10.6em;
+	width: 10.6em;
 }
 
 .align{
@@ -145,6 +164,8 @@ body{
 	border: 2px solid rgba(75, 171, 175, 1);
 	border-radius: 30px;
 	margin: 5px 10px;
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
 	transition: all 0.2s;
 }
 
@@ -154,12 +175,15 @@ body{
 }
 
 .form_btn:hover{
-	transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+	    -ms-transform: scale(1.15);
+	        transform: scale(1.15);
 }
 
 
 /*----------Lower Nav----------*/
 .lower-nav{
+	display: -ms-grid;
 	display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -185,8 +209,11 @@ body{
 }
 
 .quicklinks, .social ul{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 }
 
 .quicklinks ul, .social ul{
